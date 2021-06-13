@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace MetricsManager.Controllers
             return Ok();
         }
         [HttpPut("enable/{agentId}")]
-        public IActionResult EnableAgentById([FromRoute] int agentId
+        public IActionResult EnableAgentById([FromRoute] int agentId)
         {
             return Ok();
         }
@@ -26,6 +25,5 @@ namespace MetricsManager.Controllers
         {
             return Ok();
         }
-
     }
 }
