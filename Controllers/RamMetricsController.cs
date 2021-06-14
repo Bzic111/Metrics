@@ -11,5 +11,15 @@ namespace MetricsManager.Controllers
     [ApiController]
     public class RamMetricsController : ControllerBase
     {
+        [HttpGet("agent/{agentId}/from/{fromTime}/to/{toTime}")]
+        public IActionResult GetRamMetricsFromAgent([FromRoute] int agentId, [FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        {
+            return Ok();
+        }
+        [HttpGet("cluster/from/{fromTime}/to/{toTime}")]
+        public IActionResult GetRamMetricsFromAllCluster([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        {
+            return Ok();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetricsManager.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/agent")]
     [ApiController]
     public class AgentsController : ControllerBase
     {

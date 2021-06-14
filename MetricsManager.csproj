@@ -4,5 +4,24 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="MetricsAgent\**" />
+    <Compile Remove="TestMetricsAgent\**" />
+    <Compile Remove="TestMetricsManager2\**" />
+    <Compile Remove="TestMetricsManager\**" />
+    <Content Remove="MetricsAgent\**" />
+    <Content Remove="TestMetricsAgent\**" />
+    <Content Remove="TestMetricsManager2\**" />
+    <Content Remove="TestMetricsManager\**" />
+    <EmbeddedResource Remove="MetricsAgent\**" />
+    <EmbeddedResource Remove="TestMetricsAgent\**" />
+    <EmbeddedResource Remove="TestMetricsManager2\**" />
+    <EmbeddedResource Remove="TestMetricsManager\**" />
+    <None Remove="MetricsAgent\**" />
+    <None Remove="TestMetricsAgent\**" />
+    <None Remove="TestMetricsManager2\**" />
+    <None Remove="TestMetricsManager\**" />
+  </ItemGroup>
+
 
 </Project>

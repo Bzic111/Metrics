@@ -3,9 +3,9 @@ using Xunit;
 using MetricsManager.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TestMetricsManager
+namespace TestMetricsManager2
 {
-    public class UnitTestMetricsManager1
+    public class UnitTestMetricsManager2
     {
         public class CpuMetricsControllerUnitTests
         {
@@ -71,7 +71,7 @@ namespace TestMetricsManager
                 var agentId = 1;
                 var fromTime = TimeSpan.FromSeconds(0);
                 var toTime = TimeSpan.FromSeconds(100);
-                var result = controller.GetDotNetMetricsFromAgent(agentId,fromTime, toTime);
+                var result = controller.GetDotNetMetricsFromAgent(agentId, fromTime, toTime);
                 _ = Assert.IsAssignableFrom<IActionResult>(result);
             }
             [Fact]
