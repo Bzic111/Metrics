@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace MetricsAgent.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/metrics/cpu")]
     [ApiController]
     public class CPUMetricsController : ControllerBase
     {
+        [HttpGet("from/{fromTime}/to/{toTime}")]
+        public IActionResult GetCPUMetrics([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        {
+            return Ok();
+        }
+
     }
 }

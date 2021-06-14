@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace MetricsAgent.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/metrics/ram")]
     [ApiController]
     public class RamMetricsController : ControllerBase
     {
+        [HttpGet("available/from/{fromTime}/to/{toTime}")]
+        public IActionResult GetRamMetrics([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime) { return Ok(); }
     }
 }
