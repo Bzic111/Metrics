@@ -2,6 +2,8 @@ using System;
 using Xunit;
 using MetricsManager.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Moq;
 
 namespace TestMetricsManager
 {
