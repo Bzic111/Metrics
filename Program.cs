@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MetricsManager
+namespace Metrics
 {
     public class Program
     {
@@ -24,7 +24,7 @@ namespace MetricsManager
             catch (Exception exception)
             {
                 //NLog: устанавливаем отлов исключений
-                logger.Error(exception, $"Stopped program because of exception:\n{exception.Message}");
+                logger.Error(exception, "Stopped program because of exception");
                 throw;
             }
             finally
@@ -32,15 +32,17 @@ namespace MetricsManager
                 // остановка логера 
                 NLog.LogManager.Shutdown();
             }
-            // CreateHostBuilder(args).Build().Run();
         }
-        public static IHostBuilder CreateHostBuilder(string[] args) => Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            })
             .ConfigureLogging(logging =>
             {
-                logging.ClearProviders();                                                                   // создание провайдеров логирования
-                logging.SetMinimumLevel(LogLevel.Trace);                                                    // устанавливаем минимальный уровень логирования
-            }).UseNLog();                                                                                   // добавляем библиотеку nlog
+                logging.ClearProviders(); // создание провайдеров логирования
+                logging.SetMinimumLevel(LogLevel.Trace); // устанавливаем минимальный уровень логирования
+            }).UseNLog(); // добавляем библиотеку nlog
 
         //public static IHostBuilder CreateHostBuilder(string[] args) =>
         //    Host.CreateDefaultBuilder(args)
